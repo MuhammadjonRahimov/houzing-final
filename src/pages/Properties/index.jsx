@@ -1,8 +1,11 @@
+import Layout from '../../components/Layout';
 import styles from './index.module.scss';
 
 const Properties = () => {
     return (
-        <h1>Properties</h1>
+        <Layout>
+            <h1>Properties</h1>
+        </Layout>
     )
 }
 

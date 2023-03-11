@@ -31,7 +31,8 @@ input{
 button{
 	cursor: pointer;
 	background:transparent;
-	// color:inherit;
+
+	transition:all 0.2s ease 0s;
 	
 	&::-moz-focus-inner {
 		padding: 0;
@@ -62,5 +63,15 @@ body{
 .container{
 	max-width:1440px;
 	margin:0 auto;
-	padding:0 130px;
+	padding:0 16px;
+
+	@media(min-width:991px) {
+		padding-left:70px;
+		padding-right:70px;
+	}
+
+	@media(min-width:1440px) {
+		padding-left:130px;
+		padding-right:130px;
+	}
 }

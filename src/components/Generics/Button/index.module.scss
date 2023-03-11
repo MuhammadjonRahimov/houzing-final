@@ -1,4 +1,4 @@
-@import '/src/assets/styles/variables.scss';
+@import '/src/assets/styles/sass-power.scss';
 
 .button{
     display: grid;
@@ -13,6 +13,13 @@
     &__size-small {
         width: 45px;
         height: 45px;
+    }
+    &__size-medium-small{
+        padding:0 20px;
+
+        @media(min-width:767px) {
+            padding:0 40px;
+        }
     }
     &__size-medium{
         width:131px;

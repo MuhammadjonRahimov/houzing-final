@@ -1,0 +1,18 @@
+@import  '/src/assets/styles/sass-power.scss';
+
+.footer{
+    background-color:$color-secondary;
+    padding: 16px 0;
+
+    &__row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap:wrap;
+        gap:24px;
+    }
+
+    &__btn{
+        transform:rotate(-180deg);
+    }
+}

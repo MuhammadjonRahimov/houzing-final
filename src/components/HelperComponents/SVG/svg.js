@@ -576,6 +576,66 @@ const svgs = {
             )
         }
     },
+    user: {
+        getIcon(width, height, mode) {
+            return (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={width || "15"}
+                    height={height || "15"}
+                    fill="none"
+                    viewBox="0 0 15 15"
+                >
+                    <path
+                        fill={mode || "#696969"}
+                        d="M13.81 9.522A7.026 7.026 0 0012.018 8.4a.586.586 0 10-.476 1.071c.584.26 1.087.573 1.495.931.503.442.791 1.082.791 1.756v1.084a.587.587 0 01-.586.586H1.758a.587.587 0 01-.586-.586v-1.084c0-.674.288-1.314.791-1.756.592-.52 2.317-1.73 5.537-1.73a4.34 4.34 0 004.336-4.336A4.34 4.34 0 007.5 0a4.34 4.34 0 00-4.336 4.336A4.33 4.33 0 004.86 7.772c-1.885.414-3.057 1.212-3.67 1.75A3.508 3.508 0 000 12.158v1.084C0 14.212.788 15 1.758 15h11.484A1.76 1.76 0 0015 13.242v-1.084a3.508 3.508 0 00-1.19-2.636zM4.336 4.336A3.168 3.168 0 017.5 1.172a3.168 3.168 0 013.164 3.164A3.168 3.168 0 017.5 7.5a3.168 3.168 0 01-3.164-3.164z"
+                    ></path>
+                </svg>
+            )
+        }
+    },
+    menu: {
+        getIcon(width, height, mode) {
+            return (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={width || "20"}
+                    height={height || "16"}
+                    fill="none"
+                    viewBox="0 0 20 16"
+                >
+                    <path fill={mode || "#fff"} d="M0 0H20V2H0z"></path>
+                    <path fill={mode || "#fff"} d="M0 7H20V9H0z"></path>
+                    <path fill={mode || "#fff"} d="M0 14H20V16H0z"></path>
+                </svg>
+            )
+        }
+    },
+    close: {
+        getIcon(width, height, mode) {
+            return (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={width || "24"}
+                    height={height || "24"}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                >
+                    <g clipPath="url(#clip0_1987_28577)">
+                        <path
+                            fill={mode || "#0D263B"}
+                            d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z"
+                        ></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1987_28577">
+                            <path fill="#fff" d="M0 0H24V24H0z"></path>
+                        </clipPath>
+                    </defs>
+                </svg>
+            )
+        }
+    },
 }
 
 export default svgs;

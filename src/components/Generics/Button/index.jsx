@@ -14,7 +14,7 @@ const Button = ({ children, className, type = 'button', mode, size, border, radi
     return (
         <button
             type={type}
-            className={`${className} ${style}`}
+            className={`${style} ${className}`}
             {...rest}
         >
             {children}
