@@ -1,0 +1,61 @@
+@import '/src/assets/styles/variables.scss';
+
+.button{
+    display: grid;
+    place-items:center;
+    height: 44px;
+
+    // =============== size ===================
+    &__size-extra-small{
+        width: 35px;
+        height: 35px;
+    }
+    &__size-small {
+        width: 45px;
+        height: 45px;
+    }
+    &__size-medium{
+        width:131px;
+    }
+    &__size-big{
+        width:180px;
+    }
+    // =============== mode ===================
+    &__mode-blue{
+        background-color:$color-primary;
+        color:#fff;
+    }
+    &__mode-smoke{
+        background-color: #F6F8F9;
+    }
+    &__mode-white{
+        color:$color-secondary;
+    }
+    &__mode-transparent{
+        color:#fff;
+    }
+    // =============== shadow ===================
+    &__shadow{
+        box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.06);
+    }
+    // =============== border ===================
+    &__border-white{
+        border: 1px solid #fff;
+    }
+    
+    &__border-gray {
+        border: 1px solid $color-fourthly;
+    }
+    &__border-blue {
+        border:1px solid $color-primary;
+    }
+    // =============== radius ===================
+    &__circle{
+        border-radius:50%;
+    }
+    
+    &__r2{
+        border-radius:2px;
+    }
+
+}

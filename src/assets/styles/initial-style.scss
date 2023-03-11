@@ -1,0 +1,60 @@
+/* --------------------------------------------------------------------------------------------- */
+// fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,900&display=swap");
+
+/* --------------------------------------------------------------------------------------------- */
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing:inherit;
+}
+a{
+	text-decoration: none;
+	&:focus, &:active{
+		overflow: none;
+	}
+}
+nav,footer,header,aside{display: block;}
+
+input,button,textarea,iframe{
+	font-family:inherit;
+	border:none;
+	outline:none;
+}
+input{
+	display: inline-block;
+	&::-ms-clear{
+		display: none;
+	}
+}
+button{
+	cursor: pointer;
+	background:transparent;
+	// color:inherit;
+	
+	&::-moz-focus-inner {
+		padding: 0;
+		border:0;
+	}
+}
+
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+html,body{
+	height: 100%;
+}
+body{
+	font-family: 'Montserrat', sans-serif;
+	box-sizing:border-box;
+}
+#root{
+	min-height: 100%;
+	
+	display: flex;
+	flex-direction:column;
+	overflow: hidden;
+	position: relative;
+}
