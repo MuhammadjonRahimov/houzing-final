@@ -1,8 +1,9 @@
 @import '/src/assets/styles/sass-power.scss';
 
 .card{
-    max-width:380px;
-
+    // width:380px;
+    border:1px solid $color-fourthly;
+    flex:1 1 auto;
     &__img{
         position: relative;
         padding-bottom: 57.89%;
@@ -31,6 +32,8 @@
         }
         h3{
             margin-bottom: 4px;
+            white-space:nowrap;
+            overflow: hidden;
         }
         p{
             margin-bottom: 16px;

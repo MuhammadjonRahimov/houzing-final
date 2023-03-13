@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import { ListItem, UnList } from "../../Generics"
 import { SVG } from '../../HelperComponents';
 
-const Details = ({ data, svgMode = '#fff' }) => {
+const Details = ({ data, svgMode = '#fff', textColor = 'white' }) => {
 
     let details = [];
     for (let elem of Object.entries(data)) {
@@ -16,8 +16,8 @@ const Details = ({ data, svgMode = '#fff' }) => {
             {details?.map(detail =>
                 <ListItem className={styles.detail} key={detail.name}>
                     <SVG name={detail?.name} mode={svgMode} />
-                    <p className='main-text main-text__16 white'>
-                        {details?.name} {detail?.value} {detail?.name} (s)
+                    <p className={`main-text main-text__16 ${textColor}`}>
+                        {details?.name} {detail?.value} {detail?.name}
                     </p>
                 </ListItem >
             )}

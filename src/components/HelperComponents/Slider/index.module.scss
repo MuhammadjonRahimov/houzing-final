@@ -25,10 +25,14 @@
 
 }
 
-div.swiper-container{
+div.swiper-center{
     height: 571px;
     position: relative;
 
     display: grid;
     place-items:center;
+}
+div.swiper-cols{
+    display: flex;
+    align-items: center;
 }

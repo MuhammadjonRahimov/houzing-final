@@ -6,3 +6,6 @@ useRequest hook -
 Popular -
 Card -
 Details -
+Recent -
+Testimonial-
+Card_link

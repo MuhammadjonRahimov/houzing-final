@@ -3,7 +3,7 @@ import { Slider } from '../../HelperComponents';
 const Banner = () => {
     return (
         <section>
-            <Slider />
+            <Slider center={true} />
         </section>
     )
 }

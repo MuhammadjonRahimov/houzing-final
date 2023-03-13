@@ -7,11 +7,11 @@ import { Autoplay, Navigation } from 'swiper';
 import { useEffect, useState } from 'react';
 import { useRequest } from '../../../hooks';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Details } from '../../HelperComponents';
+import { Card, Details } from '../../HelperComponents';
 import { Button } from '../../Generics';
 
 
-const Slider = ({ path, type, perView = 1, navigate = true, auto = false }) => {
+const Slider = ({ path, type = 'single', perView = 1, navigate = true, auto = false, space = 0, center = false }) => {
     const request = useRequest();
     const [slides, setSlides] = useState([]);
 
@@ -26,8 +26,16 @@ const Slider = ({ path, type, perView = 1, navigate = true, auto = false }) => {
     return (
         <Swiper
             modules={[Navigation, Autoplay]}
-            slidesPerView={perView}
             navigation={navigate}
+            // spaceBetween={space}
+            breakpoints={perView > 1 && {
+                767: {
+                    slidesPerView: 2,
+                },
+                1440: {
+                    slidesPerView: 3,
+                }
+            }}
             autoplay={auto && {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
@@ -35,27 +43,8 @@ const Slider = ({ path, type, perView = 1, navigate = true, auto = false }) => {
             }}
         >
             {slides.map(slide => {
-                return type === 'popular' ?
-                    <SwiperSlide className={`shadow ${styles['swiper-container']}`} key={slide?.id}>
-                        <div className={styles.swiper}>
-                            <div className={styles['swiper__body']}>
-                                <h2 className={`title white ${styles['swiper__title']}`}>
-                                    {slide?.description?.slice(0, 30) || 'Something about the House'}
-                                </h2>
-                                <Button
-                                    className={`main-text main-text__14 white ${styles['swiper__btn']}`}
-                                    radius='r2'
-                                    border='border-blue'
-                                    size='size-big'
-                                    mode='mode-blue'
-                                >
-                                    Read more
-                                </Button>
-                            </div>
-                        </div >
-                        <img className={styles['swiper__img']} src={slide.attachments[0]?.imgPath} />
-                    </SwiperSlide> :
-                    <SwiperSlide className={`shadow ${styles['swiper-container']}`} key={slide?.id}>
+                return type === 'single' ?
+                    <SwiperSlide className={`shadow ${styles['swiper-center']}`} key={slide?.id}>
                         <div className={styles.swiper}>
                             <div className={styles['swiper__body']}>
                                 <h2 className={`title white ${styles['swiper__title']}`}>
@@ -77,7 +66,31 @@ const Slider = ({ path, type, perView = 1, navigate = true, auto = false }) => {
                             </div>
                         </div >
                         <img className={styles['swiper__img']} src={slide.attachments[0]?.imgPath} />
-                    </SwiperSlide>
+                    </SwiperSlide> :
+                    type === 'three-cols' ?
+                        <SwiperSlide key={slide?.id}>
+                            <Card data={slide} />
+                        </SwiperSlide>
+                        :
+                        <SwiperSlide className={`shadow ${styles['swiper-center']}`} key={slide?.id}>
+                            <div className={styles.swiper}>
+                                <div className={styles['swiper__body']}>
+                                    <h2 className={`title white ${styles['swiper__title']}`}>
+                                        {slide?.description?.slice(0, 30) || 'Something about the House'}
+                                    </h2>
+                                    <Button
+                                        className={`main-text main-text__14 white ${styles['swiper__btn']}`}
+                                        radius='r2'
+                                        border='border-blue'
+                                        size='size-big'
+                                        mode='mode-blue'
+                                    >
+                                        Read more
+                                    </Button>
+                                </div>
+                            </div >
+                            <img className={styles['swiper__img']} src={slide.attachments[0]?.imgPath} />
+                        </SwiperSlide>
             }
             )}
         </Swiper>

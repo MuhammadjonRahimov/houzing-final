@@ -1,15 +1,13 @@
-import { Card, SectionWrapper } from '../../components/HelperComponents';
 import Layout from '../../components/Layout';
-import { Banner, Popular } from '../../components/Sections';
+import { Banner, Popular, Recent, Recomended } from '../../components/Sections';
 
 const Home = () => {
     return (
         <Layout>
             <Banner />
-            {/* <Popular /> */}
-            <SectionWrapper title='Recomended'>
-                <Card />
-            </SectionWrapper>
+            <Recomended />
+            <Popular />
+            <Recent />
         </Layout>
     )
 }
