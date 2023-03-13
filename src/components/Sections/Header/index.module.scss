@@ -48,7 +48,7 @@
             @include ptl(absolute, 22px, 16px, 1, normal, normal);
         }
         &__menu{
-            @include ptl(absolute, 0, -100%, 1, 100%, 100%);
+            @include ptl(fixed, 0, -100%, 50, 100%, 100vh);
             background-color:#fff;
             
             display: grid;

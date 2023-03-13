@@ -26,6 +26,7 @@
     }
     &__size-big{
         width:180px;
+        flex-shrink: 0;
     }
     // =============== mode ===================
     &__mode-blue{

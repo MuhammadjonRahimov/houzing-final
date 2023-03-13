@@ -1,10 +1,15 @@
-import styles from './index.module.scss';
+import { Card, SectionWrapper } from '../../components/HelperComponents';
 import Layout from '../../components/Layout';
+import { Banner, Popular } from '../../components/Sections';
 
 const Home = () => {
     return (
         <Layout>
-            <h1>Home</h1>
+            <Banner />
+            {/* <Popular /> */}
+            <SectionWrapper title='Recomended'>
+                <Card />
+            </SectionWrapper>
         </Layout>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import useId from '../hooks/useId';
+import { useId } from '../hooks';
 
 const HomePage = React.lazy(() => import('../pages/Home'));
 const PropertiesPage = React.lazy(() => import('../pages/Properties'));

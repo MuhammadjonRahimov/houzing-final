@@ -1,0 +1,50 @@
+@import '/src/assets/styles/sass-power.scss';
+
+.card{
+    max-width:380px;
+
+    &__img{
+        position: relative;
+        padding-bottom: 57.89%;
+        & img:first-child {
+            @include ptl(absolute, 0, 0, 1, 100%, 100%);
+            object-fit: cover;
+        }
+    }
+    
+    &__user{
+        @include ptl(absolute, 100%, null, 1, 35px, 35px);
+        right: 19px;
+        border-radius:50%;
+        transform:translateY(-50%);
+    }
+
+    &__body{
+        padding:24px 20px 0 20px;
+        position: relative;
+
+        &::after{
+            content:'';
+            @include ptl(absolute, 100%, 0, 1, 100%, 1px);
+            transform:translateY(-76px);
+            background-color: $color-fourthly;
+        }
+        h3{
+            margin-bottom: 4px;
+        }
+        p{
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.footer{
+    margin-top: 16px;
+    padding:8px 0;
+
+    @include flex(row, center, space-between, null);
+    &__left{}
+    &__right{
+        @include flex(row, center, null, 20px);
+    }
+}

@@ -1,0 +1,18 @@
+.section{
+    padding:48px 0;
+    &.more-p{
+        padding-top: 96px;
+    }
+    &__top{
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__title{
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+}
