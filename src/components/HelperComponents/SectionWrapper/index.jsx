@@ -1,8 +1,8 @@
 import styles from './index.module.scss';
 
-const SectionWrapper = ({ children, title }) => {
+const SectionWrapper = ({ children, title, blue = false }) => {
     return (
-        <section className={styles.section}>
+        <section className={`${styles.section} ${blue ? styles['section__blue'] : ''}`}>
             <div className='container'>
                 <div className={styles['section__top']}>
                     <h2 className={`subtitle secondary ${styles['section__title']}`}>{title}</h2>

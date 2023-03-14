@@ -1,13 +1,16 @@
 import Layout from '../../components/Layout';
-import { Banner, Popular, Recent, Recomended } from '../../components/Sections';
+import { Banner, Categories, Popular, Recent, Recomended, Testimonial, Why } from '../../components/Sections';
 
 const Home = () => {
     return (
         <Layout>
             <Banner />
             <Recomended />
+            <Why />
+            <Categories />
             <Popular />
             <Recent />
+            <Testimonial />
         </Layout>
     )
 }

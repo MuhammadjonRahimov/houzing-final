@@ -3,7 +3,7 @@ import { Slider } from '../../HelperComponents';
 const Popular = () => {
     return (
         <section >
-            <Slider type='popular' navigate={false} auto={true} center={true} />
+            <Slider type='popular' navigate={false} auto={true} />
         </section>
     )
 }

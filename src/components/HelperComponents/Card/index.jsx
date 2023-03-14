@@ -4,10 +4,11 @@ import { Button } from '../../Generics';
 
 import homeImg from '../../../assets/img/no-home-img.png';
 import noUser from '../../../assets/img/nouser.jpeg';
+import { Link } from 'react-router-dom';
 
 const Card = ({ data }) => {
     return (
-        <div className={` ${styles.card}`}>
+        <Link to={`/properties/${data?.id}`} className={` ${styles.card}`}>
             <div className={styles['card__img']}>
                 <img src={data?.attachments[0]?.imgPath || homeImg} alt="house-pic" />
                 <img title={`${data?.user?.firstname} ${data?.user?.lastname}`} src={noUser} alt="user-pic" className={`${styles['card__user']}`} />
@@ -31,7 +32,7 @@ const Card = ({ data }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

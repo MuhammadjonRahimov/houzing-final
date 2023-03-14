@@ -1,3 +1,4 @@
+// HomePage
 Generics -
 Layout -
 navbar -
@@ -7,5 +8,7 @@ Popular -
 Card -
 Details -
 Recent -
-Testimonial-
-Card_link
+Why choose us -
+Categories -
+Card_link -
+Testimonial -

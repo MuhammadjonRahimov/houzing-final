@@ -1,9 +1,12 @@
 @import '/src/assets/styles/sass-power.scss';
 
 .card{
-    // width:380px;
+    display: block;
     border:1px solid $color-fourthly;
     flex:1 1 auto;
+    @media(min-width:1440px) {
+        width: 380px;
+    }
     &__img{
         position: relative;
         padding-bottom: 57.89%;

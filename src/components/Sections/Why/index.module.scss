@@ -1,0 +1,14 @@
+.why{
+    display: grid;
+    grid-template:1fr / repeat(auto-fit, minmax(min(243px, 100%), 1fr));
+    gap:60px;
+    &__column{
+        text-align: center;
+    }  
+    &__icon{
+        margin-bottom: 24px;
+    }
+    &__title{
+        margin-bottom: 8px;
+    }
+}
