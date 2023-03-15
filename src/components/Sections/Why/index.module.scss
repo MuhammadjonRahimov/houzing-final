@@ -1,7 +1,8 @@
+@import '/src/assets/styles/sass-power.scss';
+
 .why{
     display: grid;
-    grid-template:1fr / repeat(auto-fit, minmax(min(243px, 100%), 1fr));
-    gap:60px;
+    @include grid(243px, 60px);
     &__column{
         text-align: center;
     }  

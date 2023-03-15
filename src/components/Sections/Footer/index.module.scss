@@ -5,11 +5,8 @@
     padding: 16px 0;
 
     &__row{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex(row, center, space-between, 24px);
         flex-wrap:wrap;
-        gap:24px;
     }
 
     &__btn{

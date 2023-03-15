@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 
 import { RootContext } from '../../../context/index';
@@ -11,9 +11,14 @@ import MediaList from './MediaList';
 const Header = ({ scrollRef }) => {
     const { isAuth } = useContext(RootContext);
     const [hidden, setHidden] = useState(false);
+    const navigate = useNavigate();
 
     const handleHidden = () => {
         setHidden(!hidden);
+    }
+
+    const goToLoginPage = () => {
+        navigate('/login');
     }
 
     return (
@@ -43,6 +48,7 @@ const Header = ({ scrollRef }) => {
                         size='size-medium-small'
                         radius='r2'
                         border='border-white'
+                        onClick={goToLoginPage}
                     >
                         Login
                     </Button>

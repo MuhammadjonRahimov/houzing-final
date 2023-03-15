@@ -6,8 +6,8 @@ import navbar from '../../../utils/navbar';
 const MenuList = () => {
     return (
         <UnList className={styles['header__list']}>
-            {navbar.map(({ path, title, id }) =>
-                <ListItem className={styles['header__item']} key={id()}>
+            {navbar.map(({ path, title, id, hidden }) =>
+                !hidden && <ListItem className={styles['header__item']} key={id()}>
                     <NavLink
                         className={`main-text white main-text__16
                         ${styles['header__link']}`}

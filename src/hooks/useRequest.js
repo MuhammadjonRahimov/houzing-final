@@ -4,7 +4,8 @@ const newBaseUrl = baseUrl.replace('/v1', '');
 
 const useRequest = () => {
 
-    const request = async ({ url, method = 'GET', body, token = false, me = false }) => {
+    const request = async ({ url, method = 'GET', body, token = false, me = false, size = false, page = false }) => {
+
 
         const headers = {
             'Content-Type': 'application/json',
@@ -17,7 +18,8 @@ const useRequest = () => {
         const options = { method, headers, method, body: JSON.stringify(body) }
 
         try {
-            const response = await fetch(`${me ? newBaseUrl : baseUrl}${url}`, options)
+            const response = await fetch(`${me ? newBaseUrl :
+                baseUrl}${url}${size ? `?size=${size}` : ''}${page ? `&page=${page}` : ''}`, options)
                 .then(res => res.json());
             return response;
         } catch (error) {

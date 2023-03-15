@@ -5,6 +5,10 @@
     place-items:center;
     height: 44px;
 
+    &:disabled {
+        opacity:0.7;
+    }
+
     // =============== size ===================
     &__size-extra-small{
         width: 35px;
@@ -41,6 +45,13 @@
     }
     &__mode-transparent{
         color:#fff;
+    }
+    &__mode-secondary{
+        background-color:$color-secondary;
+    }
+    &__mode-active{
+        background-color: #b8ff06;
+        color:$color-secondary;
     }
     // =============== shadow ===================
     &__shadow{

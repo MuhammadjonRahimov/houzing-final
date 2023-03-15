@@ -20,3 +20,9 @@ $color-fourthly:#E6E9EC;
     width:$w;
     height: $h;
 }
+
+@mixin grid($min, $gap) {
+    display:grid;
+    grid-template: 1fr / repeat(auto-fit, minmax(min($min, 100%), 1fr));
+    gap:$gap;
+}

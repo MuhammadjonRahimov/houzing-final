@@ -12,3 +12,8 @@ Why choose us -
 Categories -
 Card_link -
 Testimonial -
+Pagination  -
+Filter ?
+Sign in 
+Register
+http://158.51.99.245:8081/swagger-ui.html#/
