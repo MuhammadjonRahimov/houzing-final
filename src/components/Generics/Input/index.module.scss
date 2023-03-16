@@ -3,6 +3,12 @@
 .input{
     padding:12px 16px;
     border:0px solid $color-fourthly;
+
+    width: 100%;
+
+    &:focus{
+        border-color:$color-primary;
+    }
     
     // =========== border ==============
     &__border-all{
@@ -10,6 +16,18 @@
     }
     &__border-bottom{
         border-bottom-width:1px;
+    }
+    &__border-bottom-red{
+        border-color:#f00;
+        border-bottom-width:1px;
+        
+        &:focus{
+            border-color:#f00;
+        }
+
+        &::placeholder{
+            color:red;
+        }
     }
 
     // =========== padding =============

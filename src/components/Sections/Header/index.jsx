@@ -7,9 +7,14 @@ import { Button } from '../../Generics';
 import { SVG } from '../../HelperComponents';
 import MenuList from './MenuList';
 import MediaList from './MediaList';
+import { Dropdown } from 'antd';
+import useMenu from './useMenu';
+import navbar from '../../../utils/navbar';
 
 const Header = ({ scrollRef }) => {
-    const { isAuth } = useContext(RootContext);
+    useMenu()
+
+    const { isAuth, user, logOut } = useContext(RootContext);
     const [hidden, setHidden] = useState(false);
     const navigate = useNavigate();
 
@@ -20,6 +25,17 @@ const Header = ({ scrollRef }) => {
     const goToLoginPage = () => {
         navigate('/login');
     }
+
+    const items = navbar.map(route => route.forMenu && ({
+        label: <Link
+            to={route.path}
+            className={`main-text main-text__14 secondary`}
+            onClick={route.title === 'Login' && logOut}
+        >
+            {route.title === 'Login' ? 'Log out' : route.title}
+        </Link >,
+        id: route.id(),
+    })).reverse();
 
     return (
         <header ref={scrollRef} className={styles.header}>
@@ -39,9 +55,11 @@ const Header = ({ scrollRef }) => {
                     <MediaList />
                 </nav>
                 {isAuth ?
-                    <Button size='size-small' radius='circle'>
-                        <SVG name='user' width='24' height='24' mode='#fff' />
-                    </Button>
+                    <Dropdown menu={{ items }} trigger='onclick' placement='bottomRight'>
+                        <Button size='size-small' radius='circle' title={user}>
+                            <SVG name='user' width='24' height='24' mode='#fff' />
+                        </Button>
+                    </Dropdown>
                     :
                     <Button
                         className='main-text main-text__14 white'

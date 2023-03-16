@@ -1,5 +1,8 @@
+import { message } from "antd";
+
 const { REACT_APP_BASE_URL: baseUrl } = process.env;
 const newBaseUrl = baseUrl.replace('/v1', '');
+
 
 
 const useRequest = () => {
@@ -23,6 +26,7 @@ const useRequest = () => {
                 .then(res => res.json());
             return response;
         } catch (error) {
+            message.error('Email or Password is wrong');
         }
     }
     return request;

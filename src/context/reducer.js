@@ -9,6 +9,7 @@ const reducer = (state, { type, item }) => {
                 isAuth: item?.isAuth,
             }
         case 'LOGOUT':
+            localStorage.clear();
             return initialState;
         default: return state;
     }

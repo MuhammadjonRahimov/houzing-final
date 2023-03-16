@@ -1,8 +1,22 @@
+import { useContext, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { RootContext } from "../context";
 
 import navbar from "../utils/navbar";
 
 function Root() {
+    const { login } = useContext(RootContext);
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
+
+
+    useEffect(() => {
+        login({
+            user: localStorage.getItem('user'),
+            isAuth: token ? true : false,
+            token: localStorage.getItem('token'),
+        })
+    }, [token])
 
     return (
         <Routes>

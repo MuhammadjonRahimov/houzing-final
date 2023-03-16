@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-const Input = ({ type = 'input', border, space, ...rest }) => {
+const Input = ({ type = 'input', border, space, className, ...rest }) => {
     let style = `
         ${styles.input}
         ${styles[`input__${border}`]}
@@ -12,7 +12,7 @@ const Input = ({ type = 'input', border, space, ...rest }) => {
     return (
         <input
             type={type}
-            className={style}
+            className={`${style} ${className}`}
             {...rest}
         />
     )

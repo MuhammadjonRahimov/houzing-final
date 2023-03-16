@@ -1,7 +1,7 @@
 @import '/src/assets/styles/sass-power.scss';
 
 .details{
-    @include flex(row, center, center, 20px);
+    @include flex(row, center, space-between, 20px);
     flex-wrap:wrap;
 
     &:not(:last-child) {
