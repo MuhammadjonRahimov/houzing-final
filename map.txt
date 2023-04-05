@@ -13,7 +13,11 @@ Categories -
 Card_link -
 Testimonial -
 Pagination  -
-Filter ?
-Sign in 
-Register
+Sign in -
+Filter -
+Properties:id -
+NewHouse ?
+Favourite ?
+Register ?
 http://158.51.99.245:8081/swagger-ui.html#/
+# REACT_APP_BASE_URL = 'http://158.51.99.245:8081/api/v1'

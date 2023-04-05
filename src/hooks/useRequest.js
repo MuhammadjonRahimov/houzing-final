@@ -19,17 +19,21 @@ const useRequest = () => {
         }
 
         const options = { method, headers, method, body: JSON.stringify(body) }
-
         try {
             const response = await fetch(`${me ? newBaseUrl :
-                baseUrl}${url}${size ? `?size=${size}` : ''}${page ? `&page=${page}` : ''}`, options)
+                baseUrl}${url}`, options)
                 .then(res => res.json());
+            // const response = await fetch(`${me ? newBaseUrl :
+            //     baseUrl}${url}${size ? `?size=${size}` : ''}${page ? `&page=${page}` : ''}`, options)
+            //     .then(res => res.json());
             return response;
         } catch (error) {
-            message.error('Email or Password is wrong');
+            console.log(error);
+            // message.error('Email or Password is wrong');
         }
     }
     return request;
+
 }
 
 export default useRequest;

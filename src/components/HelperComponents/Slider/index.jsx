@@ -12,6 +12,7 @@ import { Button } from '../../Generics';
 import { Link } from 'react-router-dom';
 
 import noUser from '../../../assets/img/nouser.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 const icons = [
     { name: 'dom', path: '/img/dom.jpg' },
@@ -25,10 +26,10 @@ const icons = [
     { name: 'flat', path: '/img/house1.png' },
 ]
 
-
 const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false }) => {
     const request = useRequest();
     const [slides, setSlides] = useState([]);
+    const navigateTo = useNavigate();
 
     useEffect(() => {
         getData();
@@ -76,6 +77,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                                     radius='r2'
                                     border='border-white'
                                     size='size-big'
+                                    onClick={() => navigateTo(`/properties/${slide?.id}`)}
                                 >
                                     Read more
                                 </Button>
@@ -123,6 +125,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                                                 border='border-blue'
                                                 size='size-big'
                                                 mode='mode-blue'
+                                                onClick={() => navigateTo(`/properties/${slide?.id}`)}
                                             >
                                                 Read more
                                             </Button>

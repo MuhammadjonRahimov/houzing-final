@@ -10,15 +10,15 @@ const Properties = () => {
     const [data, setData] = useState([]);
     const [pages, setPages] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
-
     const { search } = useLocation();
 
     useEffect(() => {
         getData();
-    }, [search, currentPage])
+    }, [search, currentPage]);
 
     const getData = async () => {
-        const response = await request({ url: '/houses/list', size: 6, page: currentPage });
+        const response = await request({ url: `/houses/list${search}` });
+        // const response = await request({ url: `/houses/list${search}`, size: 6, page: currentPage });
         response && setData(response?.data);
         response && setPages(response?.map.total_pages);
     }
@@ -32,13 +32,13 @@ const Properties = () => {
                         )}
                     </div >
                 </div >
-                <Pagination
+                {/* <Pagination
                     route='properties'
                     size='6'
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
                     pages={pages}
-                />
+                /> */}
             </SectionWrapper>
         </Layout>
     )

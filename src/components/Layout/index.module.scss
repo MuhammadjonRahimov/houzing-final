@@ -7,4 +7,9 @@
     &__main{
         flex:1 1 auto;
     }
+    
+    &__centered{
+        display: grid;
+        place-items:center;
+    }
 }

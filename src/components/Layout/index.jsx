@@ -1,11 +1,13 @@
 import styles from './index.module.scss';
-import { Header, Footer } from '../Sections';
+import { Header, Footer, Filter } from '../Sections';
 import { useRef } from 'react';
-import { useRequest } from '../../hooks';
 
-const Layout = ({ children }) => {
+
+const Layout = ({ children, centered = false }) => {
+    const pathname = window.location.pathname;
+    const isFilterHidden = pathname !== '/home' && pathname !== '/properties';
+
     const headerRef = useRef();
-
     const scrollToTop = () => {
         headerRef.current.scrollIntoView({ behavior: 'smooth' })
     }
@@ -13,7 +15,8 @@ const Layout = ({ children }) => {
     return (
         <div className={styles.layout}>
             <Header scrollRef={headerRef} />
-            <main className={styles['layout__main']}>
+            {!isFilterHidden && <Filter />}
+            <main className={`${styles['layout__main']} ${centered ? styles['layout__centered'] : ''}`}>
                 {children}
             </main>
             <Footer scrollHandler={scrollToTop} />

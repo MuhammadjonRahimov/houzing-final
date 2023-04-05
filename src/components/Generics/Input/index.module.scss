@@ -1,10 +1,15 @@
 @import '/src/assets/styles/sass-power.scss';
 
 .input{
-    padding:12px 16px;
+    padding:0 16px;
+    height: 44px;
     border:0px solid $color-fourthly;
-
     width: 100%;
+
+    &::placeholder{
+        font-size: inherit;
+        color: inherit;
+    }
 
     &:focus{
         border-color:$color-primary;
@@ -33,5 +38,8 @@
     // =========== padding =============
     &__no-left-padding {
         padding-left: 0;
+    }
+    &__padding-more{
+        padding-left: 44px;
     }
 }

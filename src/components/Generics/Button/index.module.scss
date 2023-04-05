@@ -53,6 +53,9 @@
         background-color: #b8ff06;
         color:$color-secondary;
     }
+    &__mode-red{
+        background-color: #f00;
+    }
     // =============== shadow ===================
     &__shadow{
         box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.06);

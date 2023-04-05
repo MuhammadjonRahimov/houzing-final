@@ -1,18 +1,12 @@
 @import '/src/assets//styles/sass-power.scss';
 
 .login{
-    height: 100vh;
-    display: grid;
-    place-items:center;
-    overflow-y: auto;
+    width:min(580px, 100%);
     padding:20px;
-
     &__title{
         margin-bottom: 44px;
     }
-
     &__form{
-        width:min(580px, 100%);
         @include flex(column, null, null, null);
         padding:24px 30px;
         border: 1px solid #E6E9EC;

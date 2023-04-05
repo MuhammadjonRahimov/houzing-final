@@ -7,3 +7,5 @@ export { default as Recent } from './Recent';
 export { default as Why } from './Why';
 export { default as Categories } from './Categories';
 export { default as Testimonial } from './Testimonial';
+export { default as Filter } from './Filter';
+export { default as Yandex } from './Yandex';
