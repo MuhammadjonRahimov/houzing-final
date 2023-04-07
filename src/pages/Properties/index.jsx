@@ -17,11 +17,10 @@ const Properties = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page, search]);
 
     const getData = async () => {
-        // const response = await request({ url: `/houses/list${search}` });
-
         const response = await request({ url: `/houses/list${search}`, page: page, size: 6 });
         response && setData(response?.data);
         const totalCount = response?.map.total_elements;

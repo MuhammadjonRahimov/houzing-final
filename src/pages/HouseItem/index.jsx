@@ -56,7 +56,7 @@ const HouseItem = () => {
     }, []);
 
     const getDataList = async () => {
-        const res = await request({ url: `/houses/list` });
+        await request({ url: `/houses/list` });
     }
 
     const getData = async () => {
