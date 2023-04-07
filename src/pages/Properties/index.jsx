@@ -2,25 +2,29 @@ import styles from './index.module.scss';
 import { useEffect, useState } from 'react';
 import { Card, Pagination, SectionWrapper } from '../../components/HelperComponents';
 import Layout from '../../components/Layout';
-import { useRequest, useSearch } from '../../hooks';
+import { useRequest } from '../../hooks';
 import { useLocation } from 'react-router-dom';
+import { getPageCount } from '../../utils/pages';
 
 const Properties = () => {
     const request = useRequest();
     const [data, setData] = useState([]);
-    const [pages, setPages] = useState(0);
-    const [currentPage, setCurrentPage] = useState(1);
+
+    const [totalPages, setTotalPages] = useState(0);
+    const [page, setPage] = useState(0);
     const { search } = useLocation();
 
     useEffect(() => {
         getData();
-    }, [search, currentPage]);
+    }, [page, search]);
 
     const getData = async () => {
-        const response = await request({ url: `/houses/list${search}` });
-        // const response = await request({ url: `/houses/list${search}`, size: 6, page: currentPage });
+        // const response = await request({ url: `/houses/list${search}` });
+
+        const response = await request({ url: `/houses/list${search}`, page: page, size: 6 });
         response && setData(response?.data);
-        response && setPages(response?.map.total_pages);
+        const totalCount = response?.map.total_elements;
+        setTotalPages(getPageCount(totalCount, 6))
     }
     return (
         <Layout>
@@ -32,13 +36,11 @@ const Properties = () => {
                         )}
                     </div >
                 </div >
-                {/* <Pagination
-                    route='properties'
-                    size='6'
-                    currentPage={currentPage}
-                    setCurrentPage={setCurrentPage}
-                    pages={pages}
-                /> */}
+                <Pagination
+                    pages={totalPages}
+                    currentPage={page}
+                    setCurrentPage={setPage}
+                />
             </SectionWrapper>
         </Layout>
     )

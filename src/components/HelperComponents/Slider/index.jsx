@@ -92,7 +92,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                         :
                         type === 'categories' ?
                             <SwiperSlide key={slide?.id}>
-                                <Link to={`/properties/${slide?.id}`} className={`${styles['categories__column']}`}>
+                                <Link to={`/properties?category_id=${slide?.id}`} className={`${styles['categories__column']}`}>
                                     <div className={`${styles['categories__icon']}`}><SVG name={icons[index]?.name} /></div >
                                     <img className={`${styles['categories__img']}`} src={icons[index]?.path} alt={icons[index]?.name} />
                                     <div className='shadow'></div>

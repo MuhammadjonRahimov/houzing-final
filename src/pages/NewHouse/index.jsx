@@ -69,36 +69,32 @@ const NewHouse = () => {
     const { id } = useParams();
     const request = useRequest();
 
+
     const [info, setInfo] = useState(initialInfo);
 
     useEffect(() => {
-        getData();
-        id && getData('house');
+        id && getData();
     }, []);
 
-    const getData = async (which) => {
+    const getData = async () => {
         const response = await request({
-            url: which === 'house' ? `/houses/id/${id}` : '/categories/list',
-            token: which === 'house',
+            url: `/houses/id/${id}`,
+            token: true,
         });
         if (response) {
-            if (which === 'house') {
-                setInfo(prev => ({ ...prev, imgs: response?.data?.attachments, initial: response?.data }));
-            }
-            else {
-                setInfo(prev => ({ ...prev, categories: response?.data }))
-            }
+            setInfo(prev => ({ ...prev, imgs: response?.data?.attachments, initial: response?.data }));
         }
     }
     const actionImgHandler = (action, id) => {
+        console.log(action, id);
         if (action === 'add') {
             if (info.path.length > 0) {
-                setInfo(prev => ({ ...prev, imgs: [...info.imgs, { id: info.imgs.length + 1, imgPath: info.path }] }));
+                setInfo(prev => ({ ...prev, imgs: [...info.imgs, { imgPath: info.path }] }));
                 setInfo(prev => ({ ...prev, path: '' }));
             }
         }
         if (action === 'delete') {
-            const filteredImgs = info.imgs.filter(img => img.id !== id);
+            const filteredImgs = info.imgs.filter((_, index) => id !== index);
             setInfo(prev => ({ ...prev, imgs: filteredImgs }));
         }
     }
@@ -127,7 +123,6 @@ const NewHouse = () => {
             })
         }
     });
-
     return (
         <Layout centered={true}>
             <div className='container'>
@@ -162,13 +157,6 @@ const NewHouse = () => {
                                         border='border-all'
                                     />
                                     )}
-                                    <Select
-                                        style={selectStyle}
-                                        defaultValue='Select a Category'
-                                    >
-                                        <Select.Option value=''>Select Category</Select.Option>
-                                        {info.categories.map(item => <Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>)}
-                                    </Select>
                                 </div>
                             </div>
                             <div className={styles['menu__column']}>
@@ -186,10 +174,10 @@ const NewHouse = () => {
                                 <Input border='border-all' type='text' onChange={(e) => imgPathHandler(e)} value={info.path} placeholder='Add Image URL' />
                                 <Button onClick={() => actionImgHandler('add')} size='size-medium' mode='mode-blue' className='main-text white'>Add</Button>
                                 <div className={style['new-house__imgs']}>
-                                    {info.imgs.map((img) => {
-                                        return <div key={img.id || Date.now()}>
+                                    {info.imgs.map((img, index) => {
+                                        return <div key={index || Date.now()}>
                                             <img src={img.imgPath} alt='house-pic' />
-                                            <Button onClick={() => actionImgHandler('delete', img.id)}><SVG name='delete' width='20' height='20' mode='#f00' /></Button>
+                                            <Button onClick={() => actionImgHandler('delete', index)}><SVG name='delete' width='20' height='20' mode='#f00' /></Button>
                                         </div>
                                     })}
                                 </div>

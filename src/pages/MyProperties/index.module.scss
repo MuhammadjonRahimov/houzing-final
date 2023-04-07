@@ -3,7 +3,6 @@
 
 .my-properties{
     padding:34px 0 96px 0;
-
     &__top{
         @include flex(row, center, space-between, null);
         margin-bottom: 32px;
@@ -20,6 +19,7 @@
     &__details{
         display: flex;
         gap:16px;
+        min-width:500px;
     }
 
     &__img{

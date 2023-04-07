@@ -2,25 +2,19 @@ import styles from './index.module.scss';
 
 import { Button } from '../../Generics';
 import { SVG } from '../../HelperComponents';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSearch } from '../../../hooks';
 
+const Pagination = ({ pages, currentPage, setCurrentPage }) => {
+    const pageNumbers = Array.from({ length: pages });
 
-const Pagination = ({ route, setCurrentPage, currentPage, pages, size }) => {
-    const pageNumbers = Array.from({ length: pages - 1 });
-    const navigate = useNavigate();
-
-    const nextPage = () => {
-        if (currentPage < pages) {
-            setCurrentPage(currentPage + 1);
-            navigate(`/${route}?page=${currentPage + 1}&size=${size}`)
+    const prevPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1);
         }
     }
 
-    const prevPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-            navigate(`/${route}?page=${currentPage - 1}&size=${size}`)
+    const nextPage = () => {
+        if (currentPage < pageNumbers.length) {
+            setCurrentPage(currentPage + 1);
         }
     }
 
@@ -36,23 +30,22 @@ const Pagination = ({ route, setCurrentPage, currentPage, pages, size }) => {
                 radius='r2'
                 className={styles['pagination__button-prev']}
                 onClick={prevPage}
-                disabled={currentPage === 1}
+                disabled={currentPage === 0}
             >
                 <SVG name='arrow' />
             </Button>
             {
                 pageNumbers.map((_, index) =>
-                    <Link to={`/${route}?page=${index + 1}&size=${size}`} key={index}>
-                        <Button
-                            size='size-small'
-                            mode={`${index + 1 === currentPage ? 'mode-active' : 'mode-blue'}`}
-                            radius='r2'
-                            className='main-text main-text__16 white'
-                            onClick={() => goToCurrentPage(index + 1)}
-                        >
-                            {index + 1}
-                        </Button>
-                    </Link>
+                    <Button
+                        key={index}
+                        size='size-small'
+                        mode={`${index === currentPage ? 'mode-active' : 'mode-blue'}`}
+                        radius='r2'
+                        className='main-text main-text__16 white'
+                        onClick={() => goToCurrentPage(index)}
+                    >
+                        {index + 1}
+                    </Button>
                 )
             }
             <Button
@@ -61,7 +54,7 @@ const Pagination = ({ route, setCurrentPage, currentPage, pages, size }) => {
                 radius='r2'
                 className={styles['pagination__button-next']}
                 onClick={nextPage}
-                disabled={currentPage === pageNumbers.length}
+                disabled={currentPage === pageNumbers.length - 1}
             >
                 <SVG name='arrow' />
             </Button>

@@ -80,7 +80,6 @@ const HouseItem = () => {
     }
 
     return (
-
         <Layout>
             <div className={styles.house}>
                 <div className={`container`}>
@@ -121,7 +120,6 @@ const HouseItem = () => {
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    {index === 4 && blur && <p className={styles['house__stats']}>+{house?.attachments.length - 5}</p>}
                                     <img
                                         src={image.imgPath}
                                         alt=""
@@ -250,7 +248,7 @@ const HouseItem = () => {
                     <Slider type='three-cols' perView={3} />
                 </SectionWrapper>
             </div>
-        </Layout>
+        </Layout >
     )
 }
 
