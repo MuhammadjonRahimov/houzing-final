@@ -16,16 +16,11 @@ const useRequest = () => {
 
         const options = { method, headers, body: JSON.stringify(body) }
         try {
-            // const response = await fetch(`${me ? newBaseUrl :
-            //     baseUrl}${url}`, options)
-            //     .then(res => res.json());
             const response = await fetch(`${me ? newBaseUrl :
                 baseUrl}${url}${page !== 'undefined' && url.includes('?') ? `&page=${page}` : `?page=${page}`}${size && `&size=${size}`}`, options)
                 .then(res => res.json());
             return response;
         } catch (error) {
-            console.log(error);
-            // message.error('Email or Password is wrong');
         }
     }
     return request;

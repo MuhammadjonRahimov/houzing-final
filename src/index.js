@@ -1,3 +1,7 @@
+// eslint-disable-next-line react-hooks/exhaustive-deps
+import styles from './assets/styles/main.scss';
+// eslint-disable-next-line react-hooks/exhaustive-deps
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Root from './root';
