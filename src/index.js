@@ -1,6 +1,4 @@
-// eslint-disable-next-line react-hooks/exhaustive-deps
 import styles from './assets/styles/main.scss';
-// eslint-disable-next-line react-hooks/exhaustive-deps
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -15,7 +13,7 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <RootProvider>
-        <Root />
+        <Root className={styles} />
       </RootProvider>
     </BrowserRouter>
   </QueryClientProvider >
