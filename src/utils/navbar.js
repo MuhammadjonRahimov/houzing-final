@@ -1,5 +1,6 @@
 import React from 'react';
 import { useId } from '../hooks';
+import Spinner from '../components/HelperComponents/Spinner';
 
 const HomePage = React.lazy(() => import('../pages/Home'));
 const PropertiesPage = React.lazy(() => import('../pages/Properties'));
@@ -15,7 +16,7 @@ const HouseItem = React.lazy(() => import('../pages/HouseItem'));
 const navbar = [
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><HomePage /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><HomePage /></React.Suspense>,
         title: 'Home',
         path: '/home',
         private: false,
@@ -24,7 +25,7 @@ const navbar = [
     },
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><PropertiesPage /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><PropertiesPage /></React.Suspense>,
         title: 'Properties',
         path: '/properties',
         private: false,
@@ -33,7 +34,7 @@ const navbar = [
     },
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><HouseItem /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><HouseItem /></React.Suspense>,
         title: 'HouseItem',
         path: '/properties/:id',
         private: false,
@@ -42,7 +43,7 @@ const navbar = [
     },
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><LoginPage /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><LoginPage /></React.Suspense>,
         title: 'Login',
         path: '/login',
         private: false,
@@ -51,7 +52,7 @@ const navbar = [
     },
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><Register /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><Register /></React.Suspense>,
         title: 'Register',
         path: '/register',
         private: false,
@@ -60,7 +61,7 @@ const navbar = [
     },
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><Favourite /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><Favourite /></React.Suspense>,
         title: 'Favourite',
         path: '/favourite',
         private: false,
@@ -69,7 +70,7 @@ const navbar = [
     },
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><NewHouse /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><NewHouse /></React.Suspense>,
         title: 'New House',
         path: '/my-profile',
         private: false,
@@ -87,7 +88,7 @@ const navbar = [
     },
     {
         id: useId,
-        element: <React.Suspense fallback={<h1>Loading...</h1>}><MyProperties /></React.Suspense>,
+        element: <React.Suspense fallback={<Spinner />}><MyProperties /></React.Suspense>,
         title: 'My Properties',
         path: '/my-properties',
         private: false,

@@ -5,6 +5,7 @@ import { Card, SectionWrapper } from '../../components/HelperComponents';
 import { useRequest } from '../../hooks';
 import Layout from '../../components/Layout';
 import { NoData } from '../../components/Sections';
+import Spinner from '../../components/HelperComponents/Spinner';
 
 const Favourite = () => {
     const request = useRequest();

@@ -49,7 +49,11 @@ const Register = () => {
                         me: true,
                         body: values,
                     });
-                    message[response.success ? 'success' : 'error'](response?.message);
+                    if (response?.success) {
+                        message.success('Succesfully registered, please now verify by your email');
+                    } else {
+                        message.error(response?.message);
+                    }
                 }}
             >
                 {({ values, errors, handleChange, handleSubmit }) =>
