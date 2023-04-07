@@ -16,6 +16,7 @@ function Root() {
             isAuth: token ? true : false,
             token: token,
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [token])
 
     return (

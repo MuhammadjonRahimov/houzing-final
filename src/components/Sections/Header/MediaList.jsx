@@ -10,7 +10,7 @@ const MediaList = () => {
             {mediaArr.map(media =>
                 <ListItem key={media}>
                     <Button size='size-extra-small' radius='2r'>
-                        <a href="#">
+                        <a href="/">
                             <SVG name={media} mode="#0d263b" />
                         </a>
                     </Button>

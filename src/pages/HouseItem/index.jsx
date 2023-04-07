@@ -39,6 +39,7 @@ const HouseItem = () => {
             lightbox.destroy();
             lightbox = null;
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
@@ -56,7 +57,7 @@ const HouseItem = () => {
     }, []);
 
     const getDataList = async () => {
-        await request({ url: `/houses/list` });
+        await request({ url: '/houses/list' });
     }
 
     const getData = async () => {
