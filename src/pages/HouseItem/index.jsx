@@ -29,9 +29,13 @@ const HouseItem = () => {
 
     useEffect(() => {
         let lightbox = new PhotoSwipeLightbox({
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             gallery: '#' + 'my-test-gallery',
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             children: 'a',
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             pswpModule: () => import('photoswipe'),
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         });
         lightbox.init();
 
