@@ -4,17 +4,20 @@ import { Form, Input, Button } from '../../Generics';
 import { SVG } from '../../HelperComponents';
 import { Dropdown } from 'antd';
 import Items from './Items';
-import { useEffect, useState } from 'react';
-import { useRequest, useSearch } from '../../../hooks';
-import { useLocation } from 'react-router';
+import { useEffect, useRef, useState } from 'react';
+import { useRequest, useSearch, uzeReplace } from '../../../hooks';
+import { useLocation, useNavigate } from 'react-router';
 
 const Filter = () => {
     const [categories, setCategories] = useState([]);
     const [value, setValue] = useState('Select Category');
+    const inputRef = useRef('');
+
 
     const query = useSearch();
-    const location = useLocation();
     const request = useRequest();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         getCategories();
@@ -30,6 +33,11 @@ const Filter = () => {
         response && setCategories(response?.data);
     }
 
+    const onChangeRef = () => {
+        const result = uzeReplace('city', inputRef.current.value);
+        navigate(`${location.pathname}${result?.search}`);
+    }
+
     return (
         <div className={styles.filter}>
             <div className='container'>
@@ -37,9 +45,10 @@ const Filter = () => {
                     <label>
                         <Input
                             className={`main-text main-text__14 secondary ${styles['filter__input']}`}
-                            placeholder="Enter an address, neighborhood, city, or ZIP code"
+                            placeholder="Enter a city you want to buy a house"
                             border='border-all'
                             space='padding-more'
+                            ref={inputRef}
                         />
                         <SVG name='house' />
                     </label>
@@ -56,6 +65,7 @@ const Filter = () => {
                         size='size-medium'
                         mode='mode-blue'
                         className={`main-text main-text__14 ${styles['filter__btn']}`}
+                        onClick={onChangeRef}
                     >
                         <SVG name='search' />
                         <span>Search</span>

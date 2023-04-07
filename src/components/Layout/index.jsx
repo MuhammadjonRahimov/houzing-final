@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 const Layout = ({ children, centered = false }) => {
     const pathname = window.location.pathname;
-    const isFilterHidden = pathname !== '/home' && pathname !== '/properties';
+    const isFilterHidden = pathname !== '/properties';
 
     const headerRef = useRef();
     const scrollToTop = () => {

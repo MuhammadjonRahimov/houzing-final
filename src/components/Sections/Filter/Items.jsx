@@ -35,10 +35,7 @@ const Items = ({ value, data }) => {
         const result = uzeReplace('category_id', category_id);
         navigate(`${location.pathname}${result?.search}`);
     }
-    const onChangeSort = (sort) => {
-        const result = uzeReplace('sort', sort);
-        navigate(`${location.pathname}${result?.search}`);
-    }
+
     const getQuery = (queryName) => {
         return query.get(queryName);
     }
@@ -59,15 +56,6 @@ const Items = ({ value, data }) => {
                     <h3 className='main-text main-text__16 main-text__600 secondary'>Apartment info</h3>
                     <div className={styles['column-body']}>
                         <Input border='border-all' placeholder='Rooms' onChange={changeHandler} defaultValue={getQuery('room')} name='room' ref={roomsRef} />
-                        <Select
-                            style={selectStyle}
-                            onChange={onChangeSort}
-                            defaultValue={getQuery('sort') || 'Select Sort'}
-                        >
-                            <Select.Option value=''>Select Sort</Select.Option>
-                            <Select.Option value='asc'>O'suvchi</Select.Option>
-                            <Select.Option value='desc'>Kamayuvchi</Select.Option>
-                        </Select>
                         <Select
                             style={selectStyle}
                             onChange={onChangeCategory}
