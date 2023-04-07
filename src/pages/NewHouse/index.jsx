@@ -5,16 +5,12 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRequest } from '../../hooks';
 import { Form, Input, Button } from '../../components/Generics';
-import { Checkbox, message, Select } from 'antd';
+import { Checkbox, message } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { SVG } from '../../components/HelperComponents';
 import { useFormik } from 'formik';
 import Layout from '../../components/Layout';
 
-const selectStyle = {
-    height: '44px',
-    width: '200px',
-}
 
 const initialState = {
     houseDetails: {},
@@ -73,6 +69,7 @@ const NewHouse = () => {
 
     useEffect(() => {
         id && getData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getData = async () => {

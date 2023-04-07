@@ -33,6 +33,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getData = async () => {
@@ -83,7 +84,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                                 </Button>
                             </div>
                         </div >
-                        <img className={styles['swiper__img']} src={slide.attachments[0]?.imgPath} />
+                        <img className={styles['swiper__img']} src={slide.attachments[0]?.imgPath} alt='pic-attachment' />
                     </SwiperSlide> :
                     type === 'three-cols' ?
                         <SwiperSlide key={slide?.id}>
@@ -131,7 +132,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                                             </Button>
                                         </div>
                                     </div >
-                                    <img className={styles['swiper__img']} src={slide.attachments[0]?.imgPath} />
+                                    <img className={styles['swiper__img']} src={slide.attachments[0]?.imgPath} alt='attachments-pic' />
                                 </SwiperSlide>
             }
             )}

@@ -1,10 +1,4 @@
-import styles from './index.module.scss';
-
-import { Button } from '../../Generics';
-import { Link } from 'react-router-dom';
-import { ListItem, UnList } from '../../Generics';
 import navbar from '../../../utils/navbar';
-
 
 const useMenu = () => {
     const items = navbar.map(route => ({

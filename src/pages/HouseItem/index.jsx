@@ -24,7 +24,6 @@ const HouseItem = () => {
     const navigate = useNavigate();
     const { isAuth } = useContext(RootContext);
 
-    const [list, setList] = useState([]);
     const [house, setHouse] = useState({});
     const [blur, setBlur] = useState(true);
 
@@ -53,11 +52,11 @@ const HouseItem = () => {
 
     useEffect(() => {
         getData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getDataList = async () => {
         const res = await request({ url: `/houses/list` });
-        setList(res?.data);
     }
 
     const getData = async () => {
@@ -66,7 +65,7 @@ const HouseItem = () => {
         response?.data?.attachments.length > 5 && changeBlur();
     }
 
-    const changeBlur = (event) => {
+    const changeBlur = () => {
         setBlur(prev => !prev);
     }
 

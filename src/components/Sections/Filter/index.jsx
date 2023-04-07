@@ -21,11 +21,13 @@ const Filter = () => {
 
     useEffect(() => {
         getCategories();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
         const item = categories?.find(ctg => ctg.id === +query.get('category_id'));
         item?.name && setValue(item?.name);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location?.search, categories]);
 
     const getCategories = async () => {
