@@ -51,7 +51,7 @@ const Items = ({ value, data }) => {
                     <div className={styles['column-body']}>
                         <Input border='border-all' placeholder='Country' onChange={changeHandler} defaultValue={getQuery('country')} name='country' ref={countryRef} />
                         <Input border='border-all' placeholder='Region' onChange={changeHandler} defaultValue={getQuery('region')} name='region' ref={regionRef} />
-                        <Input border='border-all' placeholder='City' onChange={changeHandler} defaultValue={getQuery('city')} name='address' ref={cityRef} />
+                        <Input border='border-all' placeholder='City' onChange={changeHandler} defaultValue={getQuery('city')} name='city' ref={cityRef} />
                         <Input border='border-all' placeholder='Zip Code' onChange={changeHandler} defaultValue={getQuery('zip_code')} name='zip_code' ref={zipRef} />
                     </div>
                 </div>
