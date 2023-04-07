@@ -5,6 +5,7 @@ import Layout from '../../components/Layout';
 import { useRequest } from '../../hooks';
 import { useLocation } from 'react-router-dom';
 import { getPageCount } from '../../utils/pages';
+import { NoData } from '../../components/Sections';
 
 const Properties = () => {
     const request = useRequest();
@@ -28,20 +29,23 @@ const Properties = () => {
     }
     return (
         <Layout>
-            <SectionWrapper title='Properties'>
-                <div className={styles.properties}>
-                    <div className={styles['properties__container']}>
-                        {data?.map(item =>
-                            <Card key={item?.id} data={item} />
-                        )}
+            {data === null ? <NoData />
+                :
+                <SectionWrapper title='Properties'>
+                    <div className={styles.properties}>
+                        <div className={styles['properties__container']}>
+                            {data?.map(item =>
+                                <Card key={item?.id} data={item} />
+                            )}
+                        </div >
                     </div >
-                </div >
-                <Pagination
-                    pages={totalPages}
-                    currentPage={page}
-                    setCurrentPage={setPage}
-                />
-            </SectionWrapper>
+                    <Pagination
+                        pages={totalPages}
+                        currentPage={page}
+                        setCurrentPage={setPage}
+                    />
+                </SectionWrapper>
+            }
         </Layout>
     )
 }

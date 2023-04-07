@@ -9,3 +9,4 @@ export { default as Categories } from './Categories';
 export { default as Testimonial } from './Testimonial';
 export { default as Filter } from './Filter';
 export { default as Yandex } from './Yandex';
+export { default as NoData } from './NoData';

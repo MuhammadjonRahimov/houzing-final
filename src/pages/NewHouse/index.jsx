@@ -69,7 +69,6 @@ const NewHouse = () => {
     const { id } = useParams();
     const request = useRequest();
 
-
     const [info, setInfo] = useState(initialInfo);
 
     useEffect(() => {

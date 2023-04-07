@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { RootContext } from "../context";
 import navbar from "../utils/navbar";
+import NotFound from "../pages/NotFound/inex";
 
 function Root() {
     const { login } = useContext(RootContext);
@@ -23,7 +24,7 @@ function Root() {
                 <Route key={id} path={path} element={element} />
             )}
             <Route path='/' element={<Navigate to={'/home'} />} />
-            <Route path='*' element={<h3>Not Found</h3>} />
+            <Route path='*' element={<NotFound />} />
         </Routes>
     );
 }
