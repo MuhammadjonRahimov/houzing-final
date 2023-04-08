@@ -1,4 +1,4 @@
-import styles from './assets/styles/main.scss';
+import './assets/styles/main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -13,7 +13,7 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <RootProvider>
-        <Root className={styles} />
+        <Root />
       </RootProvider>
     </BrowserRouter>
   </QueryClientProvider >
