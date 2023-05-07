@@ -31,7 +31,7 @@ const Filter = () => {
     }, [location?.search, categories]);
 
     const getCategories = async () => {
-        const response = await request({ url: '/categories/list' });
+        const response = await request({ url: '/categories', token: true });
         response && setCategories(response?.data);
     }
 

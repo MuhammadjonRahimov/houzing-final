@@ -82,7 +82,6 @@ const NewHouse = () => {
         }
     }
     const actionImgHandler = (action, id) => {
-        console.log(action, id);
         if (action === 'add') {
             if (info.path.length > 0) {
                 setInfo(prev => ({ ...prev, imgs: [...info.imgs, { imgPath: info.path }] }));
@@ -104,6 +103,7 @@ const NewHouse = () => {
         enableReinitialize: true,
 
         onSubmit: (values) => {
+            // console.log(values);
             request({
                 url: id ? `/houses/${id}` : '/houses',
                 method: id ? 'PUT' : 'POST',
@@ -114,7 +114,7 @@ const NewHouse = () => {
                     message.success(res?.message);
                     navigate('/my-properties');
                 } else {
-                    console.log(res);
+                    message.error('image path must not exceed 255 characters')
                 }
             })
         }

@@ -5,6 +5,8 @@
         max-width:500px;
         text-align: center;
         @include flex(column, center, null, null);
+        position: relative;
+        z-index: 2;
     }
     &__title{
         margin-bottom: 8px;
@@ -69,7 +71,6 @@
 div.swiper-center{
     height: 571px;
     position: relative;
-
     display: grid;
     place-items:center;
 }

@@ -52,7 +52,7 @@ const Register = () => {
                     if (response?.success) {
                         message.success('Succesfully registered, please now verify by your email');
                     } else {
-                        message.error(response?.message);
+                        message.error('Wrong email');
                     }
                 }}
             >

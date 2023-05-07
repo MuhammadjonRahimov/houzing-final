@@ -11,8 +11,6 @@ const NewHouse = React.lazy(() => import('../pages/NewHouse'));
 const MyProperties = React.lazy(() => import('../pages/MyProperties'));
 const HouseItem = React.lazy(() => import('../pages/HouseItem'));
 
-
-
 const navbar = [
     {
         id: useId,

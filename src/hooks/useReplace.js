@@ -6,7 +6,6 @@ const uzeReplace = (query, value) => {
         url.searchParams.delete(query);
     }
     return url;
-
 }
 
 export default uzeReplace;

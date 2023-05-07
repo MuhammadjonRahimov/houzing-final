@@ -56,14 +56,14 @@ const Items = ({ value, data }) => {
                     <h3 className='main-text main-text__16 main-text__600 secondary'>Apartment info</h3>
                     <div className={styles['column-body']}>
                         <Input border='border-all' placeholder='Rooms' onChange={changeHandler} defaultValue={getQuery('room')} name='room' ref={roomsRef} />
-                        <Select
+                        {/* <Select
                             style={selectStyle}
                             onChange={onChangeCategory}
                             defaultValue={value}
                         >
                             <Select.Option value=''>Select Category</Select.Option>
-                            {data.map(item => <Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>)}
-                        </Select>
+                            {data.map((item, index) => <Select.Option key={index} value={item}>{item}</Select.Option>)}
+                        </Select> */}
                     </div>
                 </div>
                 <div className={styles['menu__column']}>

@@ -37,7 +37,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
     }, []);
 
     const getData = async () => {
-        const response = await request({ url: type === 'categories' ? '/categories/list' : '/houses/list' });
+        const response = await request({ url: type === 'categories' ? '/categories' : '/houses/list', token: type === 'categories' });
         response && setSlides(response?.data);
     }
 
@@ -60,9 +60,10 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                 delay: '5000',
             }}
         >
-            {slides.map((slide, index) => {
+            {slides?.map((slide, index) => {
                 return type === 'single' ?
-                    <SwiperSlide className={`shadow ${styles['swiper-center']}`} key={slide?.id}>
+                    <SwiperSlide className={` ${styles['swiper-center']}`} key={slide?.id}>
+                        <div className="shadow"></div>
                         <div className={styles.swiper}>
                             <div className={styles['swiper__body']}>
                                 <h2 className={`title white ${styles['swiper__title']}`}>
@@ -93,7 +94,7 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                         :
                         type === 'categories' ?
                             <SwiperSlide key={slide?.id}>
-                                <Link to={`/properties?category_id=${slide?.id}`} className={`${styles['categories__column']}`}>
+                                <Link to={`/properties?category_id=${slide}`} className={`${styles['categories__column']}`}>
                                     <div className={`${styles['categories__icon']}`}><SVG name={icons[index]?.name} /></div >
                                     <img className={`${styles['categories__img']}`} src={icons[index]?.path} alt={icons[index]?.name} />
                                     <div className='shadow'></div>
@@ -114,7 +115,8 @@ const Slider = ({ type = 'single', perView = 1, navigate = true, auto = false })
                                         </div>
                                     </div>
                                 </SwiperSlide> :
-                                <SwiperSlide className={`shadow ${styles['swiper-center']}`} key={slide?.id}>
+                                <SwiperSlide className={`${styles['swiper-center']}`} key={slide?.id}>
+                                    <div className="shadow"></div>
                                     <div className={styles.swiper}>
                                         <div className={styles['swiper__body']}>
                                             <h2 className={`title white ${styles['swiper__title']}`}>

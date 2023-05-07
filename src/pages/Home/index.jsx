@@ -6,7 +6,7 @@ const Home = () => {
             <Banner />
             <Recomended />
             <Why />
-            <Categories />
+            {/* <Categories /> */}
             <Popular />
             <Recent />
             <Testimonial />
