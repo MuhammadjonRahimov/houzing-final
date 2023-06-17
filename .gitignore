@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # folders
-/server
+/server/houzing-app-NOEMAIL.jar
 
 # dependencies
 /client/node_modules
