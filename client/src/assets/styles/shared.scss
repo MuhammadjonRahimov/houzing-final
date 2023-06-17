@@ -1,0 +1,74 @@
+// text styles
+.title{
+    font-size: 44px;
+    font-weight: 700;
+    line-height: calc(48/44);
+    letter-spacing: -0.02em;
+
+    @media(max-width:767px) {
+        font-size: 28px;
+        line-height: calc(36/28);
+    }
+}
+
+.subtitle{
+    font-weight: 600;
+    font-size: 28px;
+    line-height: calc(36/28);
+    letter-spacing: -0.02em;
+}
+
+.main-text{
+    font-size: 12px;
+    line-height: calc(20 / 12);
+
+    &__14{
+        font-size: 14px;
+    }
+
+    &__16 {
+        font-size:16px;
+        line-height:calc(24/16);
+    }
+    &__18{
+        font-size: 18px;
+        line-height: calc(28/18);
+    }
+    &__600{
+        font-weight: 600;
+    }
+}
+
+// ======================================================================
+
+.shadow{
+    background: rgba(0, 0, 0, 0.65);
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.shadow-relative{
+    box-shadow: 0px 20px 38px 0px #0000000F;
+}
+
+// ======================================================================
+
+.primary{
+    color:$color-primary;
+}
+.secondary{
+    color:$color-secondary;
+}
+.thirdly{
+    color:$color-thirdly;
+}
+.white{
+    color:#fff;
+}
+
+a.active{
+    color:#b8ff06
+}

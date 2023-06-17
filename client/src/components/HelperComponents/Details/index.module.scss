@@ -1,0 +1,24 @@
+@import '/src/assets/styles/sass-power.scss';
+
+.details{
+    @include flex(row, center, space-between, 20px);
+    flex-wrap:wrap;
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    & > *{
+        flex:0 0 30%;
+    }
+    
+    @media(min-width:767px) {
+        & > *{
+            flex:0 1 auto;
+        }
+        flex-wrap:nowrap;
+    }
+}
+.detail{
+    @include flex(column, center, center, 6px);
+}

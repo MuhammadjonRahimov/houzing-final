@@ -1,0 +1,40 @@
+@import '/src/assets//styles/sass-power.scss';
+
+.login{
+    width:min(580px, 100%);
+    padding:20px;
+    &__title{
+        margin-bottom: 44px;
+    }
+    &__form{
+        @include flex(column, null, null, null);
+        padding:24px 30px;
+        border: 1px solid #E6E9EC;
+        box-shadow: 0px 10px 30px 0px #0D263B0D;
+
+        & label {
+            margin-bottom: 4px;
+        }
+        & label:not(:last-child) {
+            margin-bottom: 34px;
+        }
+
+        & label{
+            position: relative;
+            & button{
+                @include ptl(absolute, 0, 100%, 100%, null, null);
+                transform:translate(-80%, 45%);
+            }
+        }
+    }
+
+    &__input-right[type='password'], &__input-right[type='text']{
+        padding-right: 45px;
+    }
+    &__button{
+        margin-top: 32px;
+    }
+    &__link{
+        margin-top: 20px;
+    }
+}

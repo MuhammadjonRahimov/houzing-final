@@ -1,0 +1,28 @@
+// variables
+$color-primary:  #0061DF;
+$color-secondary:#0D263B;
+$color-thirdly: #696969;
+$color-fourthly:#E6E9EC;
+
+// mixins
+@mixin flex($fd, $ai, $jc, $g) {
+    display: flex;
+    flex-direction: $fd;
+    align-items: $ai;
+    justify-content: $jc;
+    gap:$g;
+}
+@mixin ptl($p, $t, $l, $z, $w, $h) {
+    position:$p;
+    top:$t;
+    left:$l;
+    z-index:$z;
+    width:$w;
+    height: $h;
+}
+
+@mixin grid($min, $gap) {
+    display:grid;
+    grid-template: 1fr / repeat(auto-fit, minmax(min($min, 100%), 1fr));
+    gap:$gap;
+}

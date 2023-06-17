@@ -1,0 +1,80 @@
+@import '/src/assets/styles/sass-power.scss';
+
+.swiper{
+    &__body{
+        max-width:500px;
+        text-align: center;
+        @include flex(column, center, null, null);
+        position: relative;
+        z-index: 2;
+    }
+    &__title{
+        margin-bottom: 8px;
+    }
+    &__desc{
+        margin-bottom: 24px;
+    }
+    &__subtitle{
+        margin-bottom: 48px;
+    }
+    &__btn{
+        margin-top: 24px;
+    }
+    &__img{
+        @include ptl(absolute, 0, 0, -1, 100%, 100%);
+        object-fit: cover;
+    }
+
+}
+
+.categories{
+    @include flex(row, null, space-between, 20px);
+    flex-wrap:wrap;
+    &__column{
+        // display: block;
+        @include flex(row, center, center, null);
+        flex:0 0 280px;
+        height: 350px;
+        position: relative;
+    } 
+    &__icon{
+        z-index: 1;
+    }
+    &__img{
+        @include ptl(absolute, 0, 0, -1, 100%, 100%);
+        object-fit:cover;
+    }
+}
+
+.testimonial{
+    text-align: center;
+    @media(min-width:1440px) {
+        width: 380px;
+    }
+    &__description{
+        background-color:#fff;
+        padding:40px 48px;
+        position: relative;
+        
+        & > img{
+            @include ptl(absolute, 100%, 50%, 1, 38px, 38px);
+            border-radius:50%;
+            transform:translate(-50%, -50%);
+            border:1px solid #fff;
+        }
+    }
+    &__user{
+        margin-top: 37px;
+    }
+}
+
+div.swiper-center{
+    height: 571px;
+    position: relative;
+    display: grid;
+    place-items:center;
+}
+div.swiper-cols{
+    display: flex;
+    align-items: center;
+}
