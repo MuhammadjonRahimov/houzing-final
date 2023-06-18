@@ -27,3 +27,6 @@ new house ?
 
 http://158.51.99.245:8081/swagger-ui.html#/
 # REACT_APP_BASE_URL = 'http://158.51.99.245:8081/api/v1'
+
+java -jar houzing-app-NOEMAIL.jar
+—spring.datasource.password=newPassword 

@@ -24,7 +24,7 @@ const Properties = () => {
         const response = await request({ url: `/houses/list${search}`, page: page, size: 6 });
         response && setData(response?.data);
         const totalCount = response?.map?.total_elements;
-        setTotalPages(getPageCount(totalCount, 6))
+        setTotalPages(getPageCount(totalCount, 6));
     }
     return (
         <Layout>
